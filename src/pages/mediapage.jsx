@@ -1,4 +1,10 @@
 import { useRef, useState } from "react";
+import moodVideo from "../assets/video/Mood.mp4";
+import euroImage1 from "../assets/images/euro-image1.jpg";
+import euroImage2 from "../assets/images/europageimage2.jpg";
+import euroImage3 from "../assets/images/euroimage3.jpg";
+import empowermentPic from "../assets/images/empoerment.jpg";
+import leaderImage from "../assets/images/leaderimage.jpg";
 
 const Media = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -20,7 +26,7 @@ const Media = () => {
       type: "photos",
       category: "events",
       categoryLabel: "Events",
-      image: "/images/nurse.jpg",
+      image: euroImage1,
       alt: "YGI community event",
       title: "Community Engagement Programme",
       description:
@@ -32,7 +38,7 @@ const Media = () => {
       type: "photos",
       category: "community",
       categoryLabel: "Community",
-      image: "/images/Periop pic.jpg",
+      image: euroImage2,
       alt: "Community empowerment",
       title: "Empowering Local Communities",
       description:
@@ -56,7 +62,7 @@ const Media = () => {
       type: "videos",
       category: "videos",
       categoryLabel: "Video",
-      video: "/videos/Mood.mp4",
+      video: moodVideo,
       title: "YGI Community Impact",
       description:
         "Watch highlights from our community initiatives.",
@@ -67,7 +73,7 @@ const Media = () => {
       type: "photos",
       category: "community",
       categoryLabel: "Community",
-      image: "/images/pharmacy 2.jpg",
+      image: empowermentPic,
       alt: "YGI volunteers",
       title: "Volunteers Making a Difference",
       description:
@@ -136,8 +142,7 @@ const Media = () => {
       <section
         className="relative flex min-h-[320px] items-center bg-cover bg-center px-4 sm:min-h-[440px] sm:px-0"
         style={{
-          backgroundImage:
-            "url('/images/media/media-banner.jpg')",
+          backgroundImage: `url(${leaderImage})`,
         }}
       >
         {/* HERO OVERLAY */}
@@ -364,7 +369,7 @@ const Media = () => {
               ref={(element) => {
                 videoRefs.current.featured = element;
               }}
-              src="/videos/Mood.mp4"
+              src={moodVideo}
               muted
               playsInline
               preload="metadata"
@@ -425,88 +430,7 @@ const Media = () => {
       </section>
 
 
-      {/* =====================================================
-          FOOTER
-      ===================================================== */}
 
-      <footer className="bg-[#111] text-white">
-
-        <div className="mx-auto flex w-[90%] max-w-[1180px] items-center justify-between py-[50px] max-[600px]:flex-col max-[600px]:gap-[25px] max-[600px]:text-center">
-
-          {/* FOOTER LOGO */}
-
-          <a
-            href="/"
-            aria-label="Yuumy Group Initiative"
-            className="inline-flex items-center gap-[14px] py-[6px] leading-none transition duration-300 hover:-translate-y-px"
-          >
-            <img
-              src="/favicon.svg"
-              alt="YGI Logo"
-              className="h-14 w-14 shrink-0 rounded-[14px] border-2 border-[#ffbd59] bg-white object-contain p-[6px] shadow-[0_6px_16px_rgba(0,0,0,0.35),0_0_14px_rgba(255,189,89,0.18)]"
-            />
-
-            <span className="min-h-12 w-[3px] shrink-0 self-stretch rounded-[3px] bg-gradient-to-b from-[#ffbd59] to-[rgba(255,189,89,0.15)]" />
-
-            <span className="flex flex-col justify-center gap-[3px]">
-              <span className="text-[26px] font-extrabold tracking-[0.5px] text-[#68c886]">
-                YGI
-              </span>
-
-              <span className="text-[10px] font-semibold uppercase tracking-[1.2px] text-[#ffbd59]">
-                YUUMY GROUP INITIATIVE
-              </span>
-            </span>
-          </a>
-
-
-          {/* SOCIAL LINKS */}
-
-          <div className="flex gap-3">
-
-            <a
-              href="#"
-              aria-label="Facebook"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-[#444] transition duration-300 hover:border-[#16803c] hover:bg-[#16803c]"
-            >
-              <i className="fab fa-facebook-f" />
-            </a>
-
-            <a
-              href="#"
-              aria-label="Instagram"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-[#444] transition duration-300 hover:border-[#16803c] hover:bg-[#16803c]"
-            >
-              <i className="fab fa-instagram" />
-            </a>
-
-            <a
-              href="#"
-              aria-label="LinkedIn"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-[#444] transition duration-300 hover:border-[#16803c] hover:bg-[#16803c]"
-            >
-              <i className="fab fa-linkedin-in" />
-            </a>
-
-            <a
-              href="#"
-              aria-label="YouTube"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-[#444] transition duration-300 hover:border-[#16803c] hover:bg-[#16803c]"
-            >
-              <i className="fab fa-youtube" />
-            </a>
-
-          </div>
-        </div>
-
-
-        {/* COPYRIGHT */}
-
-        <div className="border-t border-[#292929] px-5 py-5 text-center text-[13px] text-[#777]">
-          © 2026 Yuumy Group Initiative. All Rights Reserved.
-        </div>
-
-      </footer>
 
     </div>
   );

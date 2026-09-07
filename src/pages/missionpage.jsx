@@ -216,75 +216,7 @@ const MissionVision = () => {
         </div>
       </section>
 
-      {/* ================= FOOTER ================= */}
-      <footer className="bg-[#111111] text-white">
-        <div className="mx-auto flex w-[90%] max-w-[1180px] flex-col items-center justify-between gap-[25px] py-[50px] md:flex-row md:text-left">
-          {/* Footer Logo */}
-          <a
-            href="#"
-            className="inline-flex items-center gap-[14px] py-1.5 leading-none transition-transform duration-300 hover:-translate-y-px"
-            aria-label="Yuumy Group Initiative"
-          >
-            <img
-              src="/favicon.svg"
-              alt="YGI Logo"
-              className="h-14 w-14 shrink-0 rounded-[14px] border-2 border-[#ffbd59] bg-white object-contain p-1.5 shadow-[0_6px_16px_rgba(0,0,0,0.35),0_0_14px_rgba(255,189,89,0.18)]"
-            />
 
-            <span className="min-h-12 w-[3px] shrink-0 self-stretch rounded-[3px] bg-gradient-to-b from-[#ffbd59] to-[rgba(255,189,89,0.15)]" />
-
-            <span className="flex flex-col justify-center gap-[3px]">
-              <span className="text-[26px] font-extrabold leading-none tracking-[0.5px] text-[#68c886]">
-                YGI
-              </span>
-
-              <span className="text-[10px] font-semibold uppercase leading-none tracking-[1.2px] text-[#ffbd59]">
-                YUUMY GROUP INITIATIVE
-              </span>
-            </span>
-          </a>
-
-          {/* Social Links */}
-          <div className="flex gap-3">
-            <a
-              href="#"
-              aria-label="Facebook"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-[#444] transition-all duration-300 hover:border-[#16803c] hover:bg-[#16803c]"
-            >
-              <i className="fab fa-facebook-f" />
-            </a>
-
-            <a
-              href="#"
-              aria-label="Instagram"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-[#444] transition-all duration-300 hover:border-[#16803c] hover:bg-[#16803c]"
-            >
-              <i className="fab fa-instagram" />
-            </a>
-
-            <a
-              href="#"
-              aria-label="LinkedIn"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-[#444] transition-all duration-300 hover:border-[#16803c] hover:bg-[#16803c]"
-            >
-              <i className="fab fa-linkedin-in" />
-            </a>
-
-            <a
-              href="#"
-              aria-label="YouTube"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-[#444] transition-all duration-300 hover:border-[#16803c] hover:bg-[#16803c]"
-            >
-              <i className="fab fa-youtube" />
-            </a>
-          </div>
-        </div>
-
-        {/* Copyright */}
-        <div className="border-t border-[#292929] px-5 py-5 text-center text-[13px] text-[#777]">
-          © 2026 Yuumy Group Initiative. All Rights Reserved.
-        </div>
-      </footer>
     </div>
   );
 };

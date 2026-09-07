@@ -7,33 +7,32 @@ import {
   FaPeopleGroup,
   FaFacebookF,
 } from "react-icons/fa6";
-import leaderImage from "../assets/images/leaderimage.jpg";
 import euroImage1 from "../assets/images/euro-image1.jpg";
-import euroImage2 from "../assets/images/europageimage2.jpg";
 import euroImage3 from "../assets/images/euroimage3.jpg";
 import empowermentPic from "../assets/images/empoerment.jpg";
+import myImage from "../assets/images/my-image.jpeg";
 
 const leadershipTeam = [
   {
     name: "Alexander Olaoye",
     role: "Founder & Executive Director",
-    image: leaderImage,
+    image: myImage,
     description:
       "Provides strategic leadership and drives the initiative's vision, partnerships and community development programmes.",
     socials: ["linkedin", "twitter", "instagram"],
   },
   {
-    name: "Team Member Name",
+    name: "Alexander Olaoye",
     role: "Programme Director",
-    image: euroImage1,
+    image: myImage,
     description:
       "Oversees programmes and ensures that projects are effectively implemented and aligned with our mission.",
     socials: ["linkedin", "instagram"],
   },
   {
-    name: "Team Member Name",
+    name: "bunmi Olaoye",
     role: "Operations Director",
-    image: euroImage2,
+    image: myImage,
     description:
       "Coordinates organisational operations and helps ensure effective delivery of our programmes and activities.",
     socials: ["linkedin", "instagram"],
@@ -42,7 +41,7 @@ const leadershipTeam = [
 
 const programmeTeam = [
   {
-    name: "Team Member Name",
+    name: "Alexander adebola",
     role: "Project Coordinator",
     image: euroImage3,
     description:
@@ -50,7 +49,7 @@ const programmeTeam = [
     socials: ["linkedin", "instagram"],
   },
   {
-    name: "Team Member Name",
+    name: "Ogundare Bunmi",
     role: "Communications Lead",
     image: empowermentPic,
     description:
@@ -58,7 +57,7 @@ const programmeTeam = [
     socials: ["linkedin", "instagram"],
   },
   {
-    name: "Team Member Name",
+    name: "Tommy Olaoye",
     role: "Community Engagement Officer",
     image: euroImage1,
     description:
