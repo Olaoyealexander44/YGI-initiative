@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import moodVideo from "../assets/video/Mood.mp4";
 import euroImage1 from "../assets/images/euro-image1.jpg";
 import euroImage2 from "../assets/images/europageimage2.jpg";
 import euroImage3 from "../assets/images/euroimage3.jpg";
 import empowermentPic from "../assets/images/empoerment.jpg";
+import ygiLogo from "../assets/images/Blue Orange And Red Modern People Network Logo.svg";
 
 const slides = [
   {
@@ -48,19 +50,28 @@ const slides = [
 ];
 
 export default function YGIHero() {
+  const navigate = useNavigate();
   const [current, setCurrent] = useState(0);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [adminOpen, setAdminOpen] = useState(false);
   const videoRef = useRef(null);
   const timerRef = useRef(null);
 
   const scrollToSection = (id) => {
     setDropdownOpen(false);
+    setAdminOpen(false);
     if (!id) {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const goToRoute = (path) => {
+    setDropdownOpen(false);
+    setAdminOpen(false);
+    navigate(path);
   };
 
   const navItems = [
@@ -205,25 +216,31 @@ export default function YGIHero() {
         >
           {/* Logo */}
 
-          <img
-            src="/favicon.svg"
-            alt="YGI Logo"
-            className="
-              block
-              h-11 w-11
-              rounded-[14px]
-              border-2 border-[#ffbd59]
-              bg-white
-              p-1.5
-              object-contain
-              shadow-[0_8px_22px_rgba(0,0,0,0.25)]
-              sm:h-[70px] sm:w-[70px]
-              sm:rounded-[18px]
-              sm:p-2
-              lg:h-[84px] lg:w-[84px]
-              lg:p-2.5
-            "
-          />
+          <div className="relative flex items-center justify-center">
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 rounded-full bg-white/25 blur-2xl"
+            />
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-[-6px] rounded-full bg-[#00b7cd]/20 blur-3xl"
+            />
+            <img
+              src={ygiLogo}
+              alt="YGI Logo"
+              className="
+                relative
+                z-10
+                block
+                h-16 w-16
+                object-contain
+                brightness-110 saturate-125
+                drop-shadow-[0_10px_30px_rgba(255,255,255,0.35)]
+                sm:h-[100px] sm:w-[100px]
+                lg:h-[124px] lg:w-[124px]
+              "
+            />
+          </div>
 
           {/* Divider */}
 
@@ -257,7 +274,7 @@ export default function YGIHero() {
                 lg:text-[34px]
               "
             >
-              YGI
+              NEI
             </span>
 
             <span
@@ -279,7 +296,7 @@ export default function YGIHero() {
                 lg:tracking-[1.6px]
               "
             >
-              YUUMY GROUP INITIATIVE
+              NEXTBUILDER EMPOWERMENT INITIATIVE
             </span>
           </div>
         </div>
@@ -387,10 +404,110 @@ export default function YGIHero() {
                     "
                   >
                     <span>{item.name}</span>
-                    <i className="fa-solid fa-chevron-down text-[9px] opacity-70" />
+                    <i className="fa-solid fa-chevron-right text-[9px] opacity-70" />
                   </button>
                 </li>
               ))}
+
+              {/* Divider */}
+              <li className="my-1 h-px bg-[#ffbd59]/20" />
+
+              {/* Admin Dropdown */}
+              <li>
+                <button
+                  type="button"
+                  onClick={() => setAdminOpen(!adminOpen)}
+                  className="
+                    flex
+                    w-full
+                    items-center
+                    justify-between
+                    gap-3
+                    rounded-[12px]
+                    px-4
+                    py-3
+                    text-left
+                    text-[11px]
+                    font-bold
+                    uppercase
+                    tracking-[1.2px]
+                    text-[#ffbd59]
+                    transition-all
+                    duration-200
+                    hover:bg-[#ffbd59]/12
+                    sm:text-[12px]
+                  "
+                >
+                  <span className="flex items-center gap-2">
+                    <i className="fa-solid fa-shield-halved text-[10px]" />
+                    Admin
+                  </span>
+                  <i className={`fa-solid ${adminOpen ? "fa-chevron-up" : "fa-chevron-down"} text-[9px] opacity-80`} />
+                </button>
+
+                {adminOpen && (
+                  <ul className="mt-1 ml-2 flex flex-col gap-1 border-l border-[#ffbd59]/25 pl-2">
+                    <li>
+                      <button
+                        type="button"
+                        onClick={() => goToRoute("/admin/login")}
+                        className="
+                          flex
+                          w-full
+                          items-center
+                          gap-2
+                          rounded-[10px]
+                          px-3
+                          py-2.5
+                          text-left
+                          text-[10px]
+                          font-medium
+                          uppercase
+                          tracking-[1.1px]
+                          text-white/90
+                          transition-all
+                          duration-200
+                          hover:bg-[#ffbd59]/12
+                          hover:text-[#ffbd59]
+                          sm:text-[11px]
+                        "
+                      >
+                        <i className="fa-solid fa-right-to-bracket text-[9px] opacity-80" />
+                        <span>Login</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        type="button"
+                        onClick={() => goToRoute("/admin/signup")}
+                        className="
+                          flex
+                          w-full
+                          items-center
+                          gap-2
+                          rounded-[10px]
+                          px-3
+                          py-2.5
+                          text-left
+                          text-[10px]
+                          font-medium
+                          uppercase
+                          tracking-[1.1px]
+                          text-white/90
+                          transition-all
+                          duration-200
+                          hover:bg-[#ffbd59]/12
+                          hover:text-[#ffbd59]
+                          sm:text-[11px]
+                        "
+                      >
+                        <i className="fa-solid fa-user-plus text-[9px] opacity-80" />
+                        <span>Signup</span>
+                      </button>
+                    </li>
+                  </ul>
+                )}
+              </li>
             </ul>
           </div>
         )}

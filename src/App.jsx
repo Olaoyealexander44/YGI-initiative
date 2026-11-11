@@ -4,6 +4,8 @@ import Home from './pages/home';
 import MissionVision from './pages/missionpage';
 import Media from './pages/mediapage';
 import Team from './pages/teampage';
+import AdminLoginPage from './pages/adminloginpage';
+import AdminSignupPage from './pages/adminsignuppage';
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
           </div>
         }
       />
+      <Route path="/admin/login" element={<AdminLoginPage />} />
+      <Route path="/admin/signup" element={<AdminSignupPage />} />
     </Routes>
   );
 }
